@@ -1,0 +1,331 @@
+ * {
+   box-sizing: border-box
+ }
+
+ :root {
+   --spacer-small:0.25rem;
+   --spacer-medium:200px;
+   --spacer-normal:1rem;
+   --spacer-large:6rem;	
+
+   --spacer-large-mac: 8rem;
+   --spacer-large-desk: 10rem;
+   --spacer-large-dell: 4rem;
+
+   /* variable font sizes */
+   --font-size-dell: 1.25rem;
+   --font-size-mac: 2rem;
+   --font-size-desk: 2rem;
+
+ }
+
+ .shine-text2 {
+  font-family: 'Bevan'; 
+  text-align: center;
+  font-weight: 400; 
+  font-size: var(--font-size-desk);
+ }
+
+ .shine-text {
+  font-family: 'Bevan'; 
+  font-weight: 400; 
+  font-size: var(--font-size-dell);
+ }
+
+ .spacer {
+  height: var(--spacer-large-dell)
+ }
+
+ .normal-spacer {
+  height: var(--spacer-normal)
+ }
+
+ .big-spacer {
+  height: var(--spacer-large)
+ }
+
+ .small-spacer {
+  height: var(--spacer-small)
+ }
+
+ /* on mac increase font size */
+ @media (min-width: 1500px) {
+   .shine-text {
+     font-size: var(--font-size-mac-mac)
+   }
+ }
+
+
+
+
+
+  @media (min-width: 1500px) {
+    .spacer {
+      height: var(--spacer-large-mac)
+    }
+  }
+
+ html {
+    font-size: 100%;
+  
+ }
+
+ body{
+   padding: 0;
+   margin: 0;
+   overflow: auto;
+   font-size: 1rem;
+   
+  }
+
+  /* GRID COLUMNS --SUM TO 100*/
+ .grid-container{
+   display:grid;
+   /*grid-template-columns: 4vw 50vw 46vw;*/
+   grid-template-columns: 5vw 70vw 25vw;
+   grid-template-rows: 95vh;
+ }
+
+ /* Columns */
+ .grid-1{
+   height:100%;
+   width:100%;
+   background-color: #dfe3e5
+ }
+
+ .grid-2{
+   height:100%;
+   width:100%
+ }
+
+ .grid-3{
+  height:100%;
+  width:100%;
+  background-color: #61d6d8
+}
+
+
+
+.column-navigation a{
+  display: block;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+.column-navigation a:hover{
+  background-color: #000
+}
+
+.active{
+  background-color: #4CAF50
+}
+
+/* not showing */
+.column-menu{
+  height: 100%;
+  width: 100%;
+  padding: 1px;
+  background-color: #dfe3e5
+}
+
+
+/* IMAGE */
+
+#cityname{
+  margin: 0;
+  padding: 2rem;
+  width: 100%;
+  height: 20%; /* modify size of text that says To assess... */
+  text-align: center;
+  font-size: var(--font-size-dell);
+}
+
+@media (min-width: 1500px) {
+  #cityname {
+    font-size: var(--font-size-mac)
+  }
+}
+
+
+#cityimage{
+  width:100%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+#popover-text{
+  background-color: #9c9a9a;
+  font-size: 18px
+}
+
+@media screen and (max-width: 1024px){
+  #cityname{
+    height: 30%;
+  }
+  #cityimage{
+    height: 40%
+  }
+}
+
+@media screen and (max-width: 768px){
+  .grid-container{
+    grid-template-columns: auto;
+    grid-template-rows: 5vh 50vh 45vh;
+  }
+
+  .column-navigation{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center
+  }
+
+  .column-navigation a {
+    display: inline
+  }
+
+  #cityname{
+    height: 5%;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #cityimage{
+    display: block;
+    margin: auto;
+    height: 80%;
+    width: 80%
+  }
+}
+
+@media screen and (max-width: 340px){
+  .grid-container{
+    grid-template-columns: auto;
+    grid-template-rows: 3vh 50vh 45vh;
+  }
+
+  .column-navigation a {
+    font-size: 10px;
+    padding: 2px
+  }
+
+  #cityname{
+    height: 10%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  #cityimage{
+    height: 50%
+  }
+}
+
+
+.bevan-regular {
+  font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bevan-regular-italic {
+  font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.button-not3d {
+  background-color: yellow; /* Yellow background */
+  color: black; /* Text color */
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.button-3d {
+  background-color: yellow; /* Yellow background */
+  color: black; /* Text color */
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px #d2b455; /* Shadow color */
+  transition: all 0.2s ease; /* Smooth transition */
+  bottom: 20px; /* Add some space at the bottom */
+}
+.button-3d:hover {
+  box-shadow: 0 6px #c2a345; /* Slightly deeper shadow on hover */
+  position: relative;
+  top: -2px; /* Move the button up to enhance the 3D effect */
+}
+.button-3d:active {
+  box-shadow: 0 2px #c2a345; /* Shorter shadow to simulate pressing down */
+  position: relative;
+  top: 2px; /* Move the button down to simulate pressing */
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  height: 18vh;  /* modify size of button-container 25 for larger 18 for small*/
+}
+
+/* for larger screens */
+@media screen and (min-width: 1024px){
+  .button-container{
+    height: 25vh;  /* modify size of button-container 25 for larger 18 for small*/
+  }
+}
+
+.header-title {
+ 
+  text-align: center;
+ 
+}
+
+/* for hamburger menu */
+
+
+.menu-icon,
+.menu-icon-spacer {
+  width: 25px; /* Ensure the spacer has the same width as the menu icon */
+  height: 25px; /* Optional height, just for ensuring it takes up space */
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the bars within the menu icon vertically */
+  /* Add margin if needed */
+}
+
+.bar {
+  width: 100%; /* Makes bars fill the menu-icon width */
+  height: 5rem;
+  background-color: black;
+  margin: 0.15rem 0;
+}
+
+/* Make the spacer invisible */
+.menu-icon-spacer {
+  visibility: hidden; /* Makes the spacer invisible, but it still occupies space */
+}
+
+.header-container {
+  display: flex; /* Enables Flexbox for the header */
+  align-items: center; /* Vertically centers the children within the header */
+  justify-content: space-between; /* Places space between the menu icon and title */
+  /* Add padding, background color, etc., as needed */
+  padding: 0.625rem;
+}
+
+.header {
+  height: 1vh;
+}

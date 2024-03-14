@@ -1,1 +1,153 @@
-Hello World
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./libs/v6.0.0-dist/ol.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.15.3/css.all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    .p1 {
+     
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    .p2 {
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0.1rem 0.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-container">
+      <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      
+      <div class="header-title">
+        <span class="shine-text2">Susceptibility and Human Impact of Natural Emergencies</span></p>
+         
+      </div>
+
+      <div class="menu-icon-spacer"></div> <!-- Spacer element -->
+     
+    </div>
+  <div class="grid-container">
+    
+    <div class="grid-1">
+
+      <div class="p1">
+        <h2>Base</h2>
+        <div class="column-navigation">
+        <input type="radio" name="baseLayerRadioButton" value="BingMaps" checked>style 1<br><br>
+        <input type="radio" name="baseLayerRadioButton" value="OSMHumanitarian">style 2<br><br>
+        <input type="radio" name="baseLayerRadioButton" value="OSMStandard">style 3<br><br>
+        <input type="radio" name="baseLayerRadioButton" value="CartoDBBaseMap">style 4<br><br>
+        <input type="radio" name="baseLayerRadioButton" value="BingMaps2">style 5<br><br>
+        </div>
+        
+        <h2>Info</h2>
+
+        <div class="column-navigation">
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="hospital"><br>hospitals<br><br> 
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="police"><br>police<br><br>
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="firestation"><br>fire<br>stations<br><br>
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="school"><br>schools<br><br>
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="college"><br>colleges<br><br>
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="TileArcGISLayer"><br>counties<br><br>
+        <input type="checkbox" name="rasterTileLayerCheckBox" value="TileArcGISLayer3"><br>roads<br>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div  id='openlayers-map'></div>
+    </div>
+
+    <div class="grid-3">
+
+     
+      <div class="column-menu" id='menu-information'>
+
+        <div class="button-container" style="text-align: center; margin-top: 1px;">  
+          <button id='citybutton' class="button-not3d">
+            <img src="./data/City_images/logocenterNoBG.png" alt="ACS Logo" style="width: 60px; height: 80px; margin: 0 auto; display: block;">
+           
+          </button>
+        
+    
+        </div>
+        <p class="p2">By identifying vulnerable populations, this application aims to facilitate targeted interventions and tailored emergency response plans, ultimately reducing the human impact of natural disasters. </p>
+       
+        <p class="p1">Choose a state, county, and census tract to begin analysis:</p>
+        <div class="p1">
+          <label for="state-select">State:</label>
+          <select id="state-select" onchange="updateCounties()"></select>
+        </div>
+
+        <div class="normal-spacer">
+
+        </div>
+      <div class="p1">
+          <label for="county-select">County:</label>
+          <select id="county-select" onchange="updateTracts()"></select>
+      </div>
+
+      <div class="normal-spacer">
+
+      </div>
+      <div class="p1">
+          <label for="tract-select">Census Tract:</label>
+          <select id="tract-select"></select>
+      </div>
+
+      <div class="normal-spacer">
+
+      </div>
+      <p class="p1">Or enter an address:</p>
+
+      <input type="text" id="addressInput" placeholder="1 Main St, City, State, Zip" style="margin-left: 1rem;">
+      <button id="getFIPS" style="font-size: 1rem;">Get Census Tract</button>
+      
+      <p id="result"></p>
+      
+      <div class="small-spacer">
+
+      </div>
+
+
+
+      <div class="button-container" style="text-align: center; margin-top: 1px; font-size: 1.5rem;">  
+        <button id='citybutton' class="button-3d">
+         
+          <p class="p1">Start Analysis</p>
+        </button>
+      
+        <div id="downloadLinkContainer"></div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div class="popover-information">
+    <p id='popover-text'></p>
+  </div>
+ 
+  <script src='./libs/v6.0.0-dist/ol.js'></script>
+  <script src='./main.js'></script>
+</body>
+</html>
